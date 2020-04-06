@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          MaterialButton(
+          RaisedButton(
             color: Colors.blue,
             textColor: Colors.white,
             child: Text('测试页面1'),
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
               RouterFluro.router.navigateTo(context, '/testPage1?id=test1Id111');
             },
           ),
-          MaterialButton(
+          RaisedButton(
             color: Colors.blue,
             textColor: Colors.white,
             child: Text('测试页面2'),

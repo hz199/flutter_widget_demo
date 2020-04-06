@@ -10,8 +10,10 @@ class Routes {
       }
     );
 
-    router.define('/', handler: homeHandle);
-    router.define('/testPage1', handler: testPage1Handle, transitionType: TransitionType.inFromBottom);
-    router.define('/testPage2/:id', handler: testPage2Handle, transitionType: TransitionType.inFromLeft);
+    final TransitionType _transitionType = TransitionType.material;
+
+    router.define('/', handler: homeHandle, transitionType: _transitionType);
+    router.define('/testPage1', handler: testPage1Handle, transitionType: _transitionType);
+    router.define('/testPage2/:id', handler: testPage2Handle, transitionType: _transitionType);
   }
 }
