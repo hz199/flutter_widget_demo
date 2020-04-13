@@ -14,9 +14,14 @@ class MyApp extends StatelessWidget {
     RouterFluro.router = router;
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter学习笔记',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+        primaryColorLight: Colors.white,
+        primaryColorBrightness: Brightness.light,
+        primaryColor: Colors.redAccent,
       ),
       initialRoute: '/',
       onGenerateRoute: RouterFluro.router.generator,
