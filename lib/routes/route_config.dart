@@ -10,10 +10,11 @@ class Routes {
       }
     );
 
-    final TransitionType _transitionType = TransitionType.material;
+    final TransitionType _transitionType = TransitionType.fadeIn;
 
     router.define('/', handler: homeHandle, transitionType: _transitionType);
     router.define('/testPage1', handler: testPage1Handle, transitionType: _transitionType);
-    router.define('/testPage2/:id', handler: testPage2Handle, transitionType: _transitionType);
+    router.define('/testPage2', handler: testPage2Handle, transitionType: _transitionType);
+    // router.define('/testPage2/:id', handler: testPage2Handle, transitionType: _transitionType);
   }
 }
