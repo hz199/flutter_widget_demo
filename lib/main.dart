@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         primaryColorLight: Colors.white,
         primaryColorBrightness: Brightness.light,
-        primaryColor: Colors.redAccent,
+        primaryColor: Color(0xFFffffff),
       ),
       initialRoute: '/',
       onGenerateRoute: RouterFluro.router.generator,

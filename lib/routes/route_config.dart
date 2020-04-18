@@ -10,7 +10,7 @@ class Routes {
       }
     );
 
-    final TransitionType _transitionType = TransitionType.fadeIn;
+    final TransitionType _transitionType = TransitionType.material;
 
     router.define('/', handler: homeHandle, transitionType: _transitionType);
     router.define('/testPage1', handler: testPage1Handle, transitionType: _transitionType);

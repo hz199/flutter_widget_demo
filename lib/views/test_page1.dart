@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwidgetdemo/routes/router_fluro.dart';
 import './Home/config.dart';
 
 class TestPage1 extends StatelessWidget {
@@ -11,12 +12,15 @@ class TestPage1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('测试页面1'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+          onPressed: () {
+            RouterFluro.goBack(context);
+          },
+        )
       ),
       body: Center(
-        child: Hero(
-          tag: _currentIamgeUrl,
-          child: Image.network(_currentIamgeUrl),
-        ),
+        child: Image.network(_currentIamgeUrl),
       ),
     );
   }

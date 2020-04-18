@@ -17,5 +17,5 @@ Handler testPage1Handle =
 Handler testPage2Handle =
     Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
   String goodsId = params['index'].first;
-  return TestPage2(goodsId);
+  return TestPage2(id: goodsId, title: '测试title',);
 });
