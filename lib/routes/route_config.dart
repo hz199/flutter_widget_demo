@@ -15,6 +15,7 @@ class Routes {
     router.define('/', handler: homeHandle, transitionType: _transitionType);
     router.define('/testPage1', handler: testPage1Handle, transitionType: _transitionType);
     router.define('/testPage2', handler: testPage2Handle, transitionType: _transitionType);
+    router.define('/swiperDemo', handler: swiperDemoHandle, transitionType: _transitionType);
     // router.define('/testPage2/:id', handler: testPage2Handle, transitionType: _transitionType);
   }
 }
