@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutterwidgetdemo/utils/flutter_screenutil.dart';
+import '../../utils/flutter_screenutil.dart';
 import './config.dart';
 
 /*
@@ -13,13 +13,13 @@ class HomeSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: ScreenConfig.instance.setHeight(250),
+      height: ScreenConfig.instance.setHeight(260),
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
-            color: Color(0xFFd8d7e4),
-            offset: Offset(10.0, 10.0),
-            blurRadius: 8.0,
-            spreadRadius: 2.0)
+            color: Colors.grey,
+            offset: Offset(5.0, 5.0),
+            blurRadius: 10.0,
+            spreadRadius: 1.0)
       ]),
       child: new Swiper(
           itemBuilder: (BuildContext context, int index) {
@@ -41,6 +41,7 @@ class HomeSwiper extends StatelessWidget {
   Widget _swiperItem(int index) {
     return Container(
       width: double.infinity,
+      margin: EdgeInsets.only(left: 5.0, right: 5.0),
       height: ScreenConfig.instance.setHeight(250),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),

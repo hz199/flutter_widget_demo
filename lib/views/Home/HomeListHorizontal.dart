@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterwidgetdemo/utils/flutter_screenutil.dart';
+import '../../utils/flutter_screenutil.dart';
 
 class HomeListHorizontal extends StatelessWidget {
   const HomeListHorizontal({Key key}) : super(key: key);
@@ -7,7 +7,7 @@ class HomeListHorizontal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenConfig.instance.setHeight(230),
+      height: ScreenConfig.instance.setHeight(260),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: _homeItemBuilder,
@@ -22,7 +22,7 @@ class HomeListHorizontal extends StatelessWidget {
           Container(
             margin: _setMargin(index),
             width: ScreenConfig.instance.setWidth(200),
-            height: ScreenConfig.instance.setWidth(200),
+            height: ScreenConfig.instance.setWidth(220),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
@@ -36,7 +36,7 @@ class HomeListHorizontal extends StatelessWidget {
             margin: index == 0 ? null : EdgeInsets.only(left: 10.0),
             child: Text(
               '描述文字描述文字描述文字描述文字',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: ScreenConfig.instance.setSp(18.0)),
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../utils/flutter_screenutil.dart';
 import 'HomeListHorizontal.dart';
 import 'HomeSwiper.dart';
+import 'MusicStyle.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -29,12 +30,24 @@ class HomePage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  '基础组件',
+                  'Basic components',
                   style: TextStyle(
-                      fontSize: ScreenConfig.instance.setSp(50.0),
+                      fontSize: ScreenConfig.instance.setSp(40.0),
+                      color: Colors.black87,
                       fontWeight: FontWeight.bold),
                 ),
-                HomeListHorizontal(),
+                HomeListHorizontal(), // listView 横向排列
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  'Music style',
+                  style: TextStyle(
+                      fontSize: ScreenConfig.instance.setSp(40.0),
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold),
+                ),
+                MusicStyle()
               ],
             )));
   }
