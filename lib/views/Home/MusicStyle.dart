@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 import '../../utils/flutter_screenutil.dart';
 
 class MusicStyle extends StatelessWidget {
@@ -15,6 +16,11 @@ class MusicStyle extends StatelessWidget {
     );
   }
 
+  Color _getRandomColor() {
+    return Color.fromARGB(255, Random.secure().nextInt(255),
+        Random.secure().nextInt(255), Random.secure().nextInt(255));
+  }
+
   Widget _musicStyleItemBuilder(BuildContext context, int index) {
     return Container(
       width: ScreenConfig.instance.setWidth(200),
@@ -22,7 +28,7 @@ class MusicStyle extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5.0),
           gradient: LinearGradient(
-            colors: [Color(0xFFfbab66), Color(0xFFf7418c)],
+            colors: [_getRandomColor(), _getRandomColor()],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           )),
@@ -31,7 +37,9 @@ class MusicStyle extends StatelessWidget {
         child: Text(
           'Music',
           style: TextStyle(
-              color: Colors.white, fontSize: ScreenConfig.instance.setSp(30.0), fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: ScreenConfig.instance.setSp(30.0),
+              fontWeight: FontWeight.bold),
         ),
       ),
     );

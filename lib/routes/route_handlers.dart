@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
-import '../views/Home/index.dart';
+// import '../views/Home/index.dart';
 import '../views/test_page1.dart';
 import '../views/test_page2.dart';
 import '../views/SwiperDemo.dart';
+import '../views/testPage/index.dart';
 
 Handler homeHandle = Handler(
     handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-        HomePage());
+        MyTestPage());
 
 Handler testPage1Handle =
     Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
