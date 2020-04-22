@@ -38,7 +38,7 @@ class HomeListHorizontal extends StatelessWidget {
             width: ScreenConfig.instance.setWidth(200),
             margin: index == 0 ? null : EdgeInsets.only(left: 10.0),
             child: Text(
-              '描述文字',
+              _swiperImageItem.textStr,
               style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: ScreenConfig.instance.setSp(18.0)),
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
