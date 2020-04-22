@@ -9,3 +9,5 @@ class RouterFluro {
     Navigator.pop(context);
   }
 }
+
+// RouterFluro.router.navigateTo(context, '${_currentHomeConfig.routerPath}?index=$index');

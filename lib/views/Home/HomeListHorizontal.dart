@@ -7,7 +7,7 @@ class HomeListHorizontal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenConfig.instance.setHeight(260),
+      height: ScreenConfig.instance.setWidth(300),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: _homeItemBuilder,

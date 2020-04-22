@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FindPage extends StatelessWidget {
-  const FindPage({Key key}) : super(key: key);
+class CategoryPage extends StatelessWidget {
+  const CategoryPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text('FindPage'),
+        child: Text('CategoryPage'),
       ),
     );
   }

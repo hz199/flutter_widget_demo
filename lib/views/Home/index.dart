@@ -16,39 +16,69 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           title: Text('首页'),
         ),
-        body: Container(
-            color: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  height: 5.0,
-                ),
-                HomeSwiper(),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  'Basic components',
-                  style: TextStyle(
-                      fontSize: ScreenConfig.instance.setSp(40.0),
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold),
-                ),
-                HomeListHorizontal(), // listView 横向排列
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  'Music style',
-                  style: TextStyle(
-                      fontSize: ScreenConfig.instance.setSp(40.0),
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold),
-                ),
-                MusicStyle()
-              ],
-            )));
+        body: ListView(
+          children: <Widget>[
+            Container(
+                color: Colors.white,
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 5.0,
+                    ),
+                    HomeSwiper(),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      'Basic components',
+                      style: TextStyle(
+                          fontSize: ScreenConfig.instance.setSp(40.0),
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    HomeListHorizontal(), // listView 横向排列
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      'Music style',
+                      style: TextStyle(
+                          fontSize: ScreenConfig.instance.setSp(40.0),
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    MusicStyle(),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1'),
+                    Text('1')
+                  ],
+                ))
+          ],
+        ));
   }
 }

@@ -29,10 +29,11 @@ class _CustomBottomBar extends State<CustomBottomBar> {
       children.add(_createItem(i));
     }
 
-    return Row(
+    return SafeArea(
+        child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: children,
-    );
+    ));
   }
 
   Widget _createItem(int i) {
@@ -42,7 +43,7 @@ class _CustomBottomBar extends State<CustomBottomBar> {
         flex: 1,
         child: Container(
           color: widget.backgroundColor,
-          padding: EdgeInsets.only(top: 4, bottom: 4),
+          padding: EdgeInsets.only(top: 10, bottom: 10),
           child: InkResponse(
             onTap: () {
               if (widget.onTap != null) {
@@ -59,7 +60,7 @@ class _CustomBottomBar extends State<CustomBottomBar> {
                     style: TextStyle(
                       fontSize: 10,
                       // ignore: ambiguous_import
-                      color: selected ? widget.textFocusColor : Colors.black38,
+                      color: selected ? widget.textFocusColor : Colors.grey[900],
                     ),
                     child: item.title),
               ],
