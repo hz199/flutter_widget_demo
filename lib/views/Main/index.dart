@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../components/CustomBottomBar/index.dart';
+import './bottomItemConfig.dart';
 import '../Home/index.dart';
 import '../Category/index.dart';
 import '../ShopingCat/index.dart';
@@ -33,85 +33,81 @@ class _MyTestPage extends State<MyTestPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView.builder(
-          onPageChanged: _onPageChange,
-          controller: _pageController,
-          itemBuilder: (BuildContext context, int index) {
-            return mainPages[index];
-          },
-          itemCount: mainPages.length,
+      body: PageView.builder(
+        onPageChanged: _onPageChange,
+        controller: _pageController,
+        itemBuilder: (BuildContext context, int index) {
+          return mainPages[index];
+        },
+        itemCount: mainPages.length,
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        onPressed: () {}, //按钮点击事件
+        tooltip: '+', //按钮长按提示
+        child: Icon(Icons.add, color: Colors.grey),
+      ),
+
+      //悬浮按钮和底部工具栏进行融合
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        shape: CircularNotchedRectangle(),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: _createBottomBarItem()
         ),
-        bottomNavigationBar: CustomBottomBar(
-            backgroundColor: Color(0xffEEEFF2),
-            currentIndex: _tabIndex,
-            textFocusColor: Colors.deepOrange,
-            onTap: (index) {
-              _pageController.jumpToPage(index);
-              _onPageChange(index);
-            },
-            items: <CustomBottomBarItem>[
-              CustomBottomBarItem(
-                  icon: Icon(
-                    Icons.home,
-                    color: Colors.grey[600],
-                  ),
-                  title: Text(
-                    '首页',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  activeIcon: Icon(
-                    Icons.home,
-                    color: Colors.redAccent,
-                  )),
-              CustomBottomBarItem(
-                  icon: Icon(
-                    Icons.category,
-                    color: Colors.grey[600],
-                  ),
-                  title: Text(
-                    '分类',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  activeIcon: Icon(
-                    Icons.category,
-                    color: Colors.redAccent,
-                  )),
-              CustomBottomBarItem(
-                  icon: Icon(
-                    Icons.shop,
-                    color: Colors.grey[600],
-                  ),
-                  title: Text(
-                    '购物车',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  activeIcon: Icon(
-                    Icons.shop,
-                    color: Colors.redAccent,
-                  )),
-              CustomBottomBarItem(
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.grey[600],
-                  ),
-                  title: Text(
-                    '我的',
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  activeIcon: Icon(
-                    Icons.person,
-                    color: Colors.redAccent,
-                  )),
-            ]),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            
-          },
-          child: Icon(Icons.add),
-          tooltip: '按钮',
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        
-        );
+      ),
+    );
+  }
+
+  List<Widget> _createBottomBarItem () {
+    final List<Widget> children = <Widget>[];
+
+    for (int i = 0; i < bottonItemConfig.length; i += 1) {
+      children.add(_createItem(bottonItemConfig[i], i));
+    }
+
+    children.insert(2, Container(
+      width: 50.0,
+      height: 50.0,
+    ));
+
+    return children;
+  }
+
+  Widget _createItem(BottonItemConfig item, int index) {
+    final bool isSelet = index == _tabIndex;
+
+    return Expanded(
+        flex: 1,
+        child: Container(
+            padding: EdgeInsets.only(bottom: 10, top: 10),
+            child: InkResponse(
+              onTap: () {
+                _pageController.jumpToPage(index);
+                _onPageChange(index);
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  isSelet ? item.activeIcon : item.icon,
+                  isSelet ? item.activeTitle : item.title,
+                ],
+              ),
+            )));
   }
 }
+
+
+// DefaultTextStyle.merge(
+//                       style: TextStyle(
+//                         fontSize: 10,
+//                         // ignore: ambiguous_import
+//                         color: Colors.grey[900],
+//                       ),
+//                       child: title)

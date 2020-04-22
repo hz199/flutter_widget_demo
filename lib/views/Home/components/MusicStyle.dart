@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import '../../utils/flutter_screenutil.dart';
+import '../../../utils/flutter_screenutil.dart';
 
 class MusicStyle extends StatelessWidget {
   const MusicStyle();

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 // import '../../routes/router_fluro.dart';
 // import './config.dart';
 import '../../utils/flutter_screenutil.dart';
-import 'HomeListHorizontal.dart';
-import 'HomeSwiper.dart';
-import 'MusicStyle.dart';
+import './components/HomeListHorizontal.dart';
+import './components/HomeSwiper.dart';
+import './components/MusicStyle.dart';
 
 class HomePage extends StatelessWidget {
   @override

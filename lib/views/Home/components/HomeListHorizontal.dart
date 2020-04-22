@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/flutter_screenutil.dart';
+import '../../../utils/flutter_screenutil.dart';
 
 class HomeListHorizontal extends StatelessWidget {
   const HomeListHorizontal({Key key}) : super(key: key);
