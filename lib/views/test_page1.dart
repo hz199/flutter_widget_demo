@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwidgetdemo/routes/router_fluro.dart';
-import './Home/config.dart';
 
 class TestPage1 extends StatelessWidget {
   final String index;
   TestPage1(this.index);
   @override
   Widget build(BuildContext context) {
-    final String _currentIamgeUrl = homeConfig[int.parse(index)].imageUrl;
 
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +18,7 @@ class TestPage1 extends StatelessWidget {
         )
       ),
       body: Center(
-        child: Image.network(_currentIamgeUrl),
+        child: Text('111'),
       ),
     );
   }

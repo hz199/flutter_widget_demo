@@ -5,9 +5,14 @@ class CategoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('CategoryPage'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('CategoryPage'),
+      ),
+      body: Container(
+        child: Center(
+          child: Text('CategoryPage'),
+        ),
       ),
     );
   }

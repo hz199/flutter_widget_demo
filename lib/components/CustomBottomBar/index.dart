@@ -29,6 +29,16 @@ class _CustomBottomBar extends State<CustomBottomBar> {
       children.add(_createItem(i));
     }
 
+    // 添加中间缺角
+    children.insert(2, Container(
+      width: 70.0,
+      height: 60.0,
+      color: widget.backgroundColor,
+      // shape: ,
+      child: Container(
+      ),
+    ));
+
     return SafeArea(
         child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

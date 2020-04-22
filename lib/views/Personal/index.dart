@@ -5,9 +5,14 @@ class PersonalPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('PersonalPage'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('PersonalPage'),
+      ),
+      body: Container(
+        child: Center(
+          child: Text('PersonalPage'),
+        ),
       ),
     );
   }

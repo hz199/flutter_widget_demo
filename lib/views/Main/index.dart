@@ -33,41 +33,85 @@ class _MyTestPage extends State<MyTestPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView.builder(
-        onPageChanged: _onPageChange,
-        controller: _pageController,
-        itemBuilder: (BuildContext context, int index) {
-          return mainPages[index];
-        },
-        itemCount: mainPages.length,
-      ),
-      bottomNavigationBar: CustomBottomBar(
-          backgroundColor: Color(0xffEEEFF2),
-          currentIndex: _tabIndex,
-          textFocusColor: Colors.deepOrange,
-          onTap: (index) {
-            _pageController.jumpToPage(index);
-//            _pageController.animateToPage(index, duration: Duration(milliseconds: 100), curve: Curves.ease);
-            _onPageChange(index);
+        body: PageView.builder(
+          onPageChanged: _onPageChange,
+          controller: _pageController,
+          itemBuilder: (BuildContext context, int index) {
+            return mainPages[index];
           },
-          items: <CustomBottomBarItem>[
-            CustomBottomBarItem(
-                icon: Icon(Icons.home, color: Colors.grey[600],),
-                title: Text('首页', style: TextStyle(fontSize: 12),),
-                activeIcon: Icon(Icons.home, color: Colors.redAccent,)),
-            CustomBottomBarItem(
-                icon: Icon(Icons.category, color: Colors.grey[600],),
-                title: Text('分类', style: TextStyle(fontSize: 12),),
-                activeIcon: Icon(Icons.category, color: Colors.redAccent,)),
-            CustomBottomBarItem(
-                icon: Icon(Icons.shop, color: Colors.grey[600],),
-                title: Text('购物车', style: TextStyle(fontSize: 12),),
-                activeIcon: Icon(Icons.shop, color: Colors.redAccent,)),
-            CustomBottomBarItem(
-                icon: Icon(Icons.person, color: Colors.grey[600],),
-                title: Text('我的', style: TextStyle(fontSize: 12),),
-                activeIcon: Icon(Icons.person, color: Colors.redAccent,)),
-          ]),
-    );
+          itemCount: mainPages.length,
+        ),
+        bottomNavigationBar: CustomBottomBar(
+            backgroundColor: Color(0xffEEEFF2),
+            currentIndex: _tabIndex,
+            textFocusColor: Colors.deepOrange,
+            onTap: (index) {
+              _pageController.jumpToPage(index);
+              _onPageChange(index);
+            },
+            items: <CustomBottomBarItem>[
+              CustomBottomBarItem(
+                  icon: Icon(
+                    Icons.home,
+                    color: Colors.grey[600],
+                  ),
+                  title: Text(
+                    '首页',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  activeIcon: Icon(
+                    Icons.home,
+                    color: Colors.redAccent,
+                  )),
+              CustomBottomBarItem(
+                  icon: Icon(
+                    Icons.category,
+                    color: Colors.grey[600],
+                  ),
+                  title: Text(
+                    '分类',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  activeIcon: Icon(
+                    Icons.category,
+                    color: Colors.redAccent,
+                  )),
+              CustomBottomBarItem(
+                  icon: Icon(
+                    Icons.shop,
+                    color: Colors.grey[600],
+                  ),
+                  title: Text(
+                    '购物车',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  activeIcon: Icon(
+                    Icons.shop,
+                    color: Colors.redAccent,
+                  )),
+              CustomBottomBarItem(
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.grey[600],
+                  ),
+                  title: Text(
+                    '我的',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  activeIcon: Icon(
+                    Icons.person,
+                    color: Colors.redAccent,
+                  )),
+            ]),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            
+          },
+          child: Icon(Icons.add),
+          tooltip: '按钮',
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        
+        );
   }
 }
