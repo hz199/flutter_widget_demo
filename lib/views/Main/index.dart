@@ -59,7 +59,7 @@ class _MyTestPage extends State<MyTestPage>
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: _createBottomBarItem()
         ),
-      ),
+      )
     );
   }
 

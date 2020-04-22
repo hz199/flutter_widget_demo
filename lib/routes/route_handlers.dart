@@ -3,7 +3,6 @@ import 'package:fluro/fluro.dart';
 // import '../views/Home/index.dart';
 import '../views/test_page1.dart';
 import '../views/test_page2.dart';
-import '../views/SwiperDemo.dart';
 import '../views/Main/index.dart';
 
 Handler homeHandle = Handler(
@@ -22,7 +21,3 @@ Handler testPage2Handle =
   return TestPage2(id: goodsId, title: '测试title',);
 });
 
-Handler swiperDemoHandle =
-    Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-  return SwiperDemo(title: '测试title',);
-});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../utils/flutter_screenutil.dart';
+import '../config.dart';
 
 class HomeListHorizontal extends StatelessWidget {
   const HomeListHorizontal({Key key}) : super(key: key);
@@ -11,11 +12,13 @@ class HomeListHorizontal extends StatelessWidget {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: _homeItemBuilder,
-          itemCount: 8),
+          itemCount: homeSwiperImages.length),
     );
   }
 
   Widget _homeItemBuilder(BuildContext context, int index) {
+    final SwiperImage _swiperImageItem = homeSwiperImages[index];
+
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -26,7 +29,7 @@ class HomeListHorizontal extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
-                  image: NetworkImage('http://study.closeeyes.cn/lol_0.jpg'),
+                  image: NetworkImage(_swiperImageItem.imageUrl),
                   fit: BoxFit.cover,
                 )),
             // child: Text('哈哈哈'),
@@ -35,7 +38,7 @@ class HomeListHorizontal extends StatelessWidget {
             width: ScreenConfig.instance.setWidth(200),
             margin: index == 0 ? null : EdgeInsets.only(left: 10.0),
             child: Text(
-              '描述文字描述文字描述文字描述文字',
+              '描述文字',
               style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: ScreenConfig.instance.setSp(18.0)),
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
