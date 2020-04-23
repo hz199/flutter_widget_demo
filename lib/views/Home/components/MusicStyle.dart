@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import '../../../utils/flutter_screenutil.dart';
+import '../../../utils/common.dart';
 
 class MusicStyle extends StatelessWidget {
   const MusicStyle();
@@ -28,7 +29,7 @@ class MusicStyle extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5.0),
           gradient: LinearGradient(
-            colors: [_getRandomColor(), _getRandomColor()],
+            colors: [CommonUtils.getRandomColor(initNumber: 255), CommonUtils.getRandomColor(initNumber: 255)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           )),
