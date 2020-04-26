@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/flutter_screenutil.dart';
 import '../../utils/common.dart';
+import './categoryConfig.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({Key key}) : super(key: key);
@@ -24,7 +25,7 @@ class CategoryPage extends StatelessWidget {
               crossAxisCount: 2, //每行三列
               childAspectRatio: 1.5 //显示区域宽高相等
               ),
-          itemCount: 10,
+          itemCount: categoryConfig.length,
           itemBuilder: (BuildContext context, int index) {
             return _createGridItem(index);
           },
@@ -68,7 +69,7 @@ class CategoryPage extends StatelessWidget {
                   colors: [
                     CommonUtils.getRandomColor(initNumber: 250),
                     CommonUtils.getRandomColor(initNumber: 250),
-                    CommonUtils.getRandomColor(initNumber: 180),
+                    CommonUtils.getRandomColor(initNumber: 250),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -81,16 +82,18 @@ class CategoryPage extends StatelessWidget {
                       blurRadius: 1.0,
                       spreadRadius: 1.0)
                 ]),
-            child: _createContent(),
+            child: _createContent(index),
           ),
         )
       ],
     );
   }
 
-  Widget _createContent() {
+  Widget _createContent(int index) {
     final _fontStyleLong = TextStyle(fontSize: 22.0, color: Colors.grey[100]);
     final _fontStyleSmall = TextStyle(fontSize: 14.0, color: Colors.grey[100]);
+
+    final CategoryConfig _currentCinfig = categoryConfig[index];
 
     return Container(
       margin: EdgeInsets.symmetric(
@@ -103,11 +106,11 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: '导', style: _fontStyleLong),
-                TextSpan(text: '行条', style: _fontStyleSmall)
+                TextSpan(text: _currentCinfig.cnTitle.substring(0, 1), style: _fontStyleLong),
+                TextSpan(text: _currentCinfig.cnTitle.substring(1), style: _fontStyleSmall)
               ])),
               Icon(
-                Icons.card_giftcard,
+                _currentCinfig.icon,
                 color: Colors.grey[200],
                 size: 30.0,
               )
@@ -118,20 +121,20 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: 'N', style: _fontStyleLong),
-                TextSpan(text: 'avBar', style: _fontStyleSmall)
+                TextSpan(text: _currentCinfig.enTitle.substring(0, 1), style: _fontStyleLong),
+                TextSpan(text: _currentCinfig.enTitle.substring(1), style: _fontStyleSmall)
               ])),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    width: ScreenConfig.instance.setWidth(60.0),
+                    width: ScreenConfig.instance.setWidth(50.0),
                     height: ScreenConfig.instance.setHeight(2.0),
                     color: Colors.grey[200],
                   ),
                   Container(
-                    width: ScreenConfig.instance.setWidth(40.0),
+                    width: ScreenConfig.instance.setWidth(30.0),
                     height: ScreenConfig.instance.setHeight(6.0),
                     color: Colors.grey[200],
                   )
