@@ -18,7 +18,7 @@ class ShopingCatPage extends StatelessWidget {
               Text(currentIndex.toString()),
               FlatButton(
                 onPressed: () {
-                  Provider.of<CurrentIndexProvider>(context, listen: false).changeIndex(22);
+                  Provider.of<CurrentIndexProvider>(context, listen: false).changeIndex();
                 },
                 child: Text('点击'),
               )

@@ -13,9 +13,8 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(
-            create: (_) => CurrentIndexProvider(),
-          )
+          // 测试 store
+          ChangeNotifierProvider(create: (_) => CurrentIndexProvider())
         ],
         child: MaterialApp(
           title: 'Flutter学习笔记',
