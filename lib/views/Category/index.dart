@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../utils/flutter_screenutil.dart';
-import '../../utils/common.dart';
+import '../../index.dart';
 import './categoryConfig.dart';
 
 class CategoryPage extends StatelessWidget {
@@ -125,7 +123,7 @@ class CategoryPage extends StatelessWidget {
                 TextSpan(text: _currentCinfig.enTitle.substring(1), style: _fontStyleSmall)
               ])),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end, 
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
