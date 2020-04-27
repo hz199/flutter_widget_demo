@@ -25,14 +25,19 @@ class CategoryPage extends StatelessWidget {
               ),
           itemCount: categoryConfig.length,
           itemBuilder: (BuildContext context, int index) {
-            return _createGridItem(index);
+            return GestureDetector(
+              child: _createGridItem(index, context),
+              onTap: () {
+                RouterFluro.router.navigateTo(context, categoryConfig[index].routerUrl);
+              },
+            );
           },
         ),
       ),
     );
   }
 
-  Widget _createGridItem(int index) {
+  Widget _createGridItem(int index, BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       // fit: StackFit.expand,
@@ -104,8 +109,12 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: _currentCinfig.cnTitle.substring(0, 1), style: _fontStyleLong),
-                TextSpan(text: _currentCinfig.cnTitle.substring(1), style: _fontStyleSmall)
+                TextSpan(
+                    text: _currentCinfig.cnTitle.substring(0, 1),
+                    style: _fontStyleLong),
+                TextSpan(
+                    text: _currentCinfig.cnTitle.substring(1),
+                    style: _fontStyleSmall)
               ])),
               Icon(
                 _currentCinfig.icon,
@@ -119,11 +128,15 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: _currentCinfig.enTitle.substring(0, 1), style: _fontStyleLong),
-                TextSpan(text: _currentCinfig.enTitle.substring(1), style: _fontStyleSmall)
+                TextSpan(
+                    text: _currentCinfig.enTitle.substring(0, 1),
+                    style: _fontStyleLong),
+                TextSpan(
+                    text: _currentCinfig.enTitle.substring(1),
+                    style: _fontStyleSmall)
               ])),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.end, 
+                crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(

@@ -4,28 +4,27 @@ class CategoryConfig {
   final String cnTitle;
   final String enTitle;
   final IconData icon;
+  final String routerUrl;
 
   CategoryConfig({
     this.cnTitle,
     this.enTitle,
-    this.icon
+    this.icon,
+    @required this.routerUrl
   });
 }
 
 List<CategoryConfig> categoryConfig = [
   CategoryConfig(
-    cnTitle: '导航',
-    enTitle: 'Nav',
-    icon: Icons.navigation
+    cnTitle: '按钮',
+    enTitle: 'Button',
+    icon: Icons.radio_button_checked,
+    routerUrl: '/category/button'
   ),
   CategoryConfig(
-    cnTitle: '导航',
-    enTitle: 'Nav',
-    icon: Icons.navigation
-  ),
-  CategoryConfig(
-    cnTitle: '导航',
-    enTitle: 'Nav',
-    icon: Icons.navigation
+    cnTitle: '模态框',
+    enTitle: 'Dialog',
+    icon: Icons.dialer_sip,
+    routerUrl: '/category/dialog'
   )
 ];
