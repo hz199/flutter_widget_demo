@@ -8,6 +8,7 @@ import '../views/Main/index.dart';
 // 分类
 import '../views/Category/Button/index.dart';
 import '../views/Category/Dialog/index.dart';
+import '../views/Category/DatePicker/index.dart';
 
 Handler homeHandle = Handler(
     handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
@@ -39,3 +40,9 @@ Handler categoryDialogHandler = Handler(
   }
 );
 
+
+Handler categoryDatePickerHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return DatePickerCategroy();
+  }
+);

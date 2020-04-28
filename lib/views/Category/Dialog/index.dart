@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 import '../../../index.dart';
 
 class DialogCategory extends StatelessWidget {
@@ -29,6 +31,15 @@ class DialogCategory extends StatelessWidget {
               },
               child: Text('SimpleDialog'),
               color: Colors.orange,
+              textColor: Colors.white,
+              shape: StadiumBorder(),
+            ),
+            MaterialButton(
+              onPressed: () {
+                _showCupertinoAlertDialog(context);
+              },
+              child: Text('CupertinoAlertDialog'),
+              color: Colors.greenAccent,
               textColor: Colors.white,
               shape: StadiumBorder(),
             )
@@ -92,6 +103,46 @@ class DialogCategory extends StatelessWidget {
         );
       },
     ).then((val) {
+      print(val);
+    });
+  }
+
+  void _showCupertinoAlertDialog(BuildContext context) {
+    showDialog<String>(
+        context: context,
+        builder: (BuildContext context) {
+          return CupertinoAlertDialog(
+            title: Text("这是一个iOS风格的对话框"),
+            content: SizedBox(
+              height: 100.0,
+              child: SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    Text("第1行"),
+                    Text("第2行"),
+                    Text("第3行"),
+                    Text("第4行"),
+                  ],
+                ),
+              ),
+            ),
+            actions: <Widget>[
+              CupertinoDialogAction(
+                child: Text("取消"),
+                onPressed: () {
+                  Navigator.of(context).pop('11');
+                  print("取消");
+                },
+              ),
+              CupertinoDialogAction(
+                child: Text("确定"),
+                onPressed: () {
+                  Navigator.of(context).pop('22');
+                },
+              ),
+            ],
+          );
+        }).then((val) {
       print(val);
     });
   }

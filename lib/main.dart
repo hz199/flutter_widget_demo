@@ -1,5 +1,6 @@
 import './index.dart';
 import './routes/route_config.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +18,14 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => CurrentIndexProvider())
         ],
         child: MaterialApp(
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: [
+            Locale('en', 'US'),
+            Locale('zh','CH'),
+          ],
           title: 'Flutter学习笔记',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(

@@ -26,5 +26,11 @@ List<CategoryConfig> categoryConfig = [
     enTitle: 'Dialog',
     icon: Icons.dialer_sip,
     routerUrl: '/category/dialog'
+  ),
+  CategoryConfig(
+    cnTitle: '日历',
+    enTitle: 'DatePicker',
+    icon: Icons.date_range,
+    routerUrl: '/category/datePicker'
   )
 ];
