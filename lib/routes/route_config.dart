@@ -21,5 +21,6 @@ class Routes {
     router.define('/category/button', handler: categoryButtonHandler, transitionType: _transitionType);
     router.define('/category/dialog', handler: categoryDialogHandler, transitionType: _transitionType);
     router.define('/category/datePicker', handler: categoryDatePickerHandler, transitionType: _transitionType);
+    router.define('/category/form', handler: categoryFormHandler, transitionType: _transitionType);
   }
 }

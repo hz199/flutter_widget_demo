@@ -32,5 +32,11 @@ List<CategoryConfig> categoryConfig = [
     enTitle: 'DatePicker',
     icon: Icons.date_range,
     routerUrl: '/category/datePicker'
+  ),
+  CategoryConfig(
+    cnTitle: '表单',
+    enTitle: 'Form',
+    icon: Icons.format_align_right,
+    routerUrl: '/category/form'
   )
 ];
