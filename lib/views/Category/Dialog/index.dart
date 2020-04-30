@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import '../../../components/LoadingDialog.dart';
 
 import '../../../index.dart';
 
@@ -40,6 +41,15 @@ class DialogCategory extends StatelessWidget {
               },
               child: Text('CupertinoAlertDialog'),
               color: Colors.greenAccent,
+              textColor: Colors.white,
+              shape: StadiumBorder(),
+            ),
+            MaterialButton(
+              onPressed: () {
+                _showLoadingDialog(context);
+              },
+              child: Text('LoadingDialog自定义'),
+              color: Colors.pink,
               textColor: Colors.white,
               shape: StadiumBorder(),
             )
@@ -145,5 +155,17 @@ class DialogCategory extends StatelessWidget {
         }).then((val) {
       print(val);
     });
+  }
+
+  // 自定义loading
+  void _showLoadingDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return new LoadingDialog(
+              // child: Text('00'),
+              );
+        });
   }
 }
