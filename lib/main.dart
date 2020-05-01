@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:fluro/fluro.dart';
-import './routes/router_fluro.dart';
+import './index.dart';
 import './routes/route_config.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,18 +12,31 @@ class MyApp extends StatelessWidget {
     Routes.configureRoutes(router);
     RouterFluro.router = router;
 
-    return MaterialApp(
-      title: 'Flutter学习笔记',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        backgroundColor: Colors.white,
-        primaryColorLight: Colors.white,
-        primaryColorBrightness: Brightness.light,
-        primaryColor: Color(0xFFffffff),
-      ),
-      initialRoute: '/',
-      onGenerateRoute: RouterFluro.router.generator,
-    );
+    return MultiProvider(
+        providers: [
+          // 测试 store
+          ChangeNotifierProvider(create: (_) => CurrentIndexProvider())
+        ],
+        child: MaterialApp(
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: [
+            Locale('en', 'US'),
+            Locale('zh','CH'),
+          ],
+          title: 'Flutter学习笔记',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            brightness: Brightness.light,
+            backgroundColor: Colors.white,
+            primaryColorLight: Colors.white,
+            primaryColorBrightness: Brightness.light,
+            primaryColor: Color(0xFFffffff),
+          ),
+          initialRoute: '/',
+          onGenerateRoute: RouterFluro.router.generator,
+        ));
   }
 }

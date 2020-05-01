@@ -16,5 +16,11 @@ class Routes {
     router.define('/testPage1', handler: testPage1Handle, transitionType: _transitionType);
     router.define('/testPage2', handler: testPage2Handle, transitionType: _transitionType);
     // router.define('/testPage2/:id', handler: testPage2Handle, transitionType: _transitionType);
+
+    // 分类
+    router.define('/category/button', handler: categoryButtonHandler, transitionType: _transitionType);
+    router.define('/category/dialog', handler: categoryDialogHandler, transitionType: _transitionType);
+    router.define('/category/datePicker', handler: categoryDatePickerHandler, transitionType: _transitionType);
+    router.define('/category/form', handler: categoryFormHandler, transitionType: _transitionType);
   }
 }

@@ -1,31 +1,42 @@
 import 'package:flutter/material.dart';
 
 class CategoryConfig {
-  final String enTitle;
   final String cnTitle;
+  final String enTitle;
   final IconData icon;
+  final String routerUrl;
 
   CategoryConfig({
-    this.enTitle,
     this.cnTitle,
-    this.icon
+    this.enTitle,
+    this.icon,
+    @required this.routerUrl
   });
 }
 
 List<CategoryConfig> categoryConfig = [
   CategoryConfig(
-    enTitle: 'ahgdsa',
-    cnTitle: '测试as',
-    icon: Icons.add_box
+    cnTitle: '按钮',
+    enTitle: 'Button',
+    icon: Icons.radio_button_checked,
+    routerUrl: '/category/button'
   ),
   CategoryConfig(
-    enTitle: 'ahgdsa',
-    cnTitle: '测试as',
-    icon: Icons.music_note
+    cnTitle: '模态框',
+    enTitle: 'Dialog',
+    icon: Icons.dialer_sip,
+    routerUrl: '/category/dialog'
   ),
   CategoryConfig(
-    enTitle: 'ahgdsa',
-    cnTitle: '测试as',
-    icon: Icons.pages
+    cnTitle: '日历',
+    enTitle: 'DatePicker',
+    icon: Icons.date_range,
+    routerUrl: '/category/datePicker'
   ),
+  CategoryConfig(
+    cnTitle: '表单',
+    enTitle: 'Form',
+    icon: Icons.format_align_right,
+    routerUrl: '/category/form'
+  )
 ];

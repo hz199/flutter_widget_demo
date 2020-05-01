@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../utils/flutter_screenutil.dart';
-import '../../utils/common.dart';
+import '../../index.dart';
 import './categoryConfig.dart';
 
 class CategoryPage extends StatelessWidget {
@@ -27,14 +25,19 @@ class CategoryPage extends StatelessWidget {
               ),
           itemCount: categoryConfig.length,
           itemBuilder: (BuildContext context, int index) {
-            return _createGridItem(index);
+            return GestureDetector(
+              child: _createGridItem(index, context),
+              onTap: () {
+                RouterFluro.router.navigateTo(context, categoryConfig[index].routerUrl);
+              },
+            );
           },
         ),
       ),
     );
   }
 
-  Widget _createGridItem(int index) {
+  Widget _createGridItem(int index, BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       // fit: StackFit.expand,
@@ -69,7 +72,7 @@ class CategoryPage extends StatelessWidget {
                   colors: [
                     CommonUtils.getRandomColor(initNumber: 250),
                     CommonUtils.getRandomColor(initNumber: 250),
-                    CommonUtils.getRandomColor(initNumber: 180),
+                    CommonUtils.getRandomColor(initNumber: 250),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -93,7 +96,11 @@ class CategoryPage extends StatelessWidget {
     final _fontStyleLong = TextStyle(fontSize: 22.0, color: Colors.grey[100]);
     final _fontStyleSmall = TextStyle(fontSize: 14.0, color: Colors.grey[100]);
 
+<<<<<<< HEAD
     final CategoryConfig currentCategoryConfig = categoryConfig[index];
+=======
+    final CategoryConfig _currentCinfig = categoryConfig[index];
+>>>>>>> 89febccdd09c2c070932b0c419caa5ee4593248a
 
     return Container(
       margin: EdgeInsets.symmetric(
@@ -106,11 +113,15 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: currentCategoryConfig.cnTitle.substring(0, 1), style: _fontStyleLong),
-                TextSpan(text: currentCategoryConfig.cnTitle.substring(1), style: _fontStyleSmall)
+                TextSpan(
+                    text: _currentCinfig.cnTitle.substring(0, 1),
+                    style: _fontStyleLong),
+                TextSpan(
+                    text: _currentCinfig.cnTitle.substring(1),
+                    style: _fontStyleSmall)
               ])),
               Icon(
-                currentCategoryConfig.icon,
+                _currentCinfig.icon,
                 color: Colors.grey[200],
                 size: 30.0,
               )
@@ -121,8 +132,12 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: currentCategoryConfig.enTitle.substring(0, 1), style: _fontStyleLong),
-                TextSpan(text: currentCategoryConfig.enTitle.substring(1), style: _fontStyleSmall)
+                TextSpan(
+                    text: _currentCinfig.enTitle.substring(0, 1),
+                    style: _fontStyleLong),
+                TextSpan(
+                    text: _currentCinfig.enTitle.substring(1),
+                    style: _fontStyleSmall)
               ])),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
