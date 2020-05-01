@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/flutter_screenutil.dart';
 import '../../utils/common.dart';
+import './categoryConfig.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({Key key}) : super(key: key);
@@ -22,9 +23,9 @@ class CategoryPage extends StatelessWidget {
               mainAxisSpacing: 8.0,
               crossAxisSpacing: 8.0,
               crossAxisCount: 2, //每行三列
-              childAspectRatio: 1.5 //显示区域宽高相等
+              childAspectRatio: 1.8 //显示区域宽高相等
               ),
-          itemCount: 10,
+          itemCount: categoryConfig.length,
           itemBuilder: (BuildContext context, int index) {
             return _createGridItem(index);
           },
@@ -41,7 +42,7 @@ class CategoryPage extends StatelessWidget {
         Positioned(
             top: 5.0,
             child: Opacity(
-              opacity: 0.2,
+              opacity: 0.3,
               child: Container(
                 decoration: BoxDecoration(
                     color: CommonUtils.getRandomColor(),
@@ -54,14 +55,14 @@ class CategoryPage extends StatelessWidget {
                     ],
                     borderRadius: BorderRadius.all(Radius.circular(5.0))),
                 width: ScreenConfig.instance.setWidth(270.0),
-                height: ScreenConfig.instance.setHeight(160.0),
+                height: ScreenConfig.instance.setWidth(166.0),
               ),
             )),
         Positioned(
           top: 0,
           child: Container(
             width: ScreenConfig.instance.setWidth(300.0),
-            height: ScreenConfig.instance.setHeight(156.0),
+            height: ScreenConfig.instance.setWidth(160.0),
             decoration: BoxDecoration(
                 // color: Colors.redAccent,
                 gradient: LinearGradient(
@@ -81,16 +82,18 @@ class CategoryPage extends StatelessWidget {
                       blurRadius: 1.0,
                       spreadRadius: 1.0)
                 ]),
-            child: _createContent(),
+            child: _createContent(index),
           ),
         )
       ],
     );
   }
 
-  Widget _createContent() {
+  Widget _createContent(int index) {
     final _fontStyleLong = TextStyle(fontSize: 22.0, color: Colors.grey[100]);
     final _fontStyleSmall = TextStyle(fontSize: 14.0, color: Colors.grey[100]);
+
+    final CategoryConfig currentCategoryConfig = categoryConfig[index];
 
     return Container(
       margin: EdgeInsets.symmetric(
@@ -103,11 +106,11 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: '导', style: _fontStyleLong),
-                TextSpan(text: '行条', style: _fontStyleSmall)
+                TextSpan(text: currentCategoryConfig.cnTitle.substring(0, 1), style: _fontStyleLong),
+                TextSpan(text: currentCategoryConfig.cnTitle.substring(1), style: _fontStyleSmall)
               ])),
               Icon(
-                Icons.card_giftcard,
+                currentCategoryConfig.icon,
                 color: Colors.grey[200],
                 size: 30.0,
               )
@@ -118,20 +121,20 @@ class CategoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text.rich(TextSpan(children: [
-                TextSpan(text: 'N', style: _fontStyleLong),
-                TextSpan(text: 'avBar', style: _fontStyleSmall)
+                TextSpan(text: currentCategoryConfig.enTitle.substring(0, 1), style: _fontStyleLong),
+                TextSpan(text: currentCategoryConfig.enTitle.substring(1), style: _fontStyleSmall)
               ])),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    width: ScreenConfig.instance.setWidth(60.0),
+                    width: ScreenConfig.instance.setWidth(50.0),
                     height: ScreenConfig.instance.setHeight(2.0),
                     color: Colors.grey[200],
                   ),
                   Container(
-                    width: ScreenConfig.instance.setWidth(40.0),
+                    width: ScreenConfig.instance.setWidth(30.0),
                     height: ScreenConfig.instance.setHeight(6.0),
                     color: Colors.grey[200],
                   )

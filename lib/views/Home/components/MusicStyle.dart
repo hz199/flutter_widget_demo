@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 import '../../../utils/flutter_screenutil.dart';
 import '../../../utils/common.dart';
 
@@ -9,17 +8,12 @@ class MusicStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenConfig.instance.setHeight(120),
+      height: ScreenConfig.instance.setWidth(130),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: _musicStyleItemBuilder,
           itemCount: 8),
     );
-  }
-
-  Color _getRandomColor() {
-    return Color.fromARGB(255, Random.secure().nextInt(255),
-        Random.secure().nextInt(255), Random.secure().nextInt(255));
   }
 
   Widget _musicStyleItemBuilder(BuildContext context, int index) {
