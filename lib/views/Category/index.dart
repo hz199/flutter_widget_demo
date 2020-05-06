@@ -96,11 +96,7 @@ class CategoryPage extends StatelessWidget {
     final _fontStyleLong = TextStyle(fontSize: 22.0, color: Colors.grey[100]);
     final _fontStyleSmall = TextStyle(fontSize: 14.0, color: Colors.grey[100]);
 
-<<<<<<< HEAD
-    final CategoryConfig currentCategoryConfig = categoryConfig[index];
-=======
     final CategoryConfig _currentCinfig = categoryConfig[index];
->>>>>>> 89febccdd09c2c070932b0c419caa5ee4593248a
 
     return Container(
       margin: EdgeInsets.symmetric(
