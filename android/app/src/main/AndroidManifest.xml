@@ -14,7 +14,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="flutterwidgetdemo"
+        android:label="我的flutter例子"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
