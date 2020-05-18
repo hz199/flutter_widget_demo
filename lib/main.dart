@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: [
             Locale('en', 'US'),
-            Locale('zh','CH'),
+            Locale('zh', 'CH'),
           ],
           title: 'Flutter学习笔记',
           debugShowCheckedModeBanner: false,
@@ -34,6 +34,10 @@ class MyApp extends StatelessWidget {
             primaryColorLight: Colors.white,
             primaryColorBrightness: Brightness.light,
             primaryColor: Color(0xFFffffff),
+            // iconTheme: IconThemeData(
+            //   color: Color(0xFF888888),
+            //   size: 35.0,
+            // ),
           ),
           initialRoute: '/',
           onGenerateRoute: RouterFluro.router.generator,

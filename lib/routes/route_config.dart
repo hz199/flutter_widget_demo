@@ -22,5 +22,6 @@ class Routes {
     router.define('/category/dialog', handler: categoryDialogHandler, transitionType: _transitionType);
     router.define('/category/datePicker', handler: categoryDatePickerHandler, transitionType: _transitionType);
     router.define('/category/form', handler: categoryFormHandler, transitionType: _transitionType);
+    router.define('/category/nestedScrollView', handler: categoryNestedScrollViewHandler, transitionType: _transitionType);
   }
 }

@@ -10,6 +10,7 @@ import '../views/Category/Button/index.dart';
 import '../views/Category/Dialog/index.dart';
 import '../views/Category/DatePicker/index.dart';
 import '../views/Category/Form/index.dart';
+import '../views/Category/ScrollView/index.dart';
 
 Handler homeHandle = Handler(
     handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
@@ -51,5 +52,11 @@ Handler categoryDatePickerHandler = Handler(
 Handler categoryFormHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return CategroyForm();
+  }
+);
+
+Handler categoryNestedScrollViewHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return NestedScrollViewDemo();
   }
 );

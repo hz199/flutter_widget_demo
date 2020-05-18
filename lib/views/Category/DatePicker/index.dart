@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 import '../../../index.dart';
 
@@ -37,8 +38,8 @@ class DatePickerCategroy extends StatelessWidget {
               onPressed: () {
                 _showCupertinoDatePicker(context);
               },
-              child: Text('CupertinoDatePicker'),
-              color: Colors.redAccent,
+              child: Text('CupertinoDatePicker IOS'),
+              color: Colors.blueAccent,
               textColor: Colors.white,
               shape: StadiumBorder(),
             ),
@@ -46,8 +47,26 @@ class DatePickerCategroy extends StatelessWidget {
               onPressed: () {
                 _showCupertinoTimerPicker(context);
               },
-              child: Text('CupertinoTimerPicker'),
-              color: Colors.redAccent,
+              child: Text('CupertinoTimerPicker IOS'),
+              color: Colors.blueAccent,
+              textColor: Colors.white,
+              shape: StadiumBorder(),
+            ),
+            MaterialButton(
+              onPressed: () {
+                _showCustomDatePicker(context);
+              },
+              child: Text('pub插件选择日期'),
+              color: Colors.orangeAccent,
+              textColor: Colors.white,
+              shape: StadiumBorder(),
+            ),
+            MaterialButton(
+              onPressed: () {
+                _showCustomTimePicker(context);
+              },
+              child: Text('pub插件选择日期事件'),
+              color: Colors.orangeAccent,
               textColor: Colors.white,
               shape: StadiumBorder(),
             ),
@@ -55,6 +74,50 @@ class DatePickerCategroy extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _showCustomTimePicker(BuildContext context) {
+    DatePicker.showDateTimePicker(context,
+        // 是否展示顶部操作按钮
+      showTitleActions: true,
+      // 最小时间
+      minTime: DateTime(2018, 3, 5),
+      // 最大时间
+      maxTime: DateTime(2099, 6, 7),
+      // change事件
+      onChanged: (date) {
+        print('change $date');
+      },
+        // 确定事件
+        onConfirm: (date) {
+          print('confirm $date');
+        },
+        // 当前时间
+        currentTime: DateTime.now(),
+        // 语言
+        locale: LocaleType.zh);
+  }
+
+  void _showCustomDatePicker(BuildContext context) {
+    DatePicker.showDatePicker(context,
+        // 是否展示顶部操作按钮
+      showTitleActions: true,
+      // 最小时间
+      minTime: DateTime(2018, 3, 5),
+      // 最大时间
+      maxTime: DateTime(2099, 6, 7),
+      // change事件
+      onChanged: (date) {
+        print('change $date');
+      },
+        // 确定事件
+        onConfirm: (date) {
+          print('confirm $date');
+        },
+        // 当前时间
+        currentTime: DateTime.now(),
+        // 语言
+        locale: LocaleType.zh);
   }
 
   void _showDatePickerFunc(BuildContext context) {

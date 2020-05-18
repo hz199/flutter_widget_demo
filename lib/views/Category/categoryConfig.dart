@@ -38,5 +38,11 @@ List<CategoryConfig> categoryConfig = [
     enTitle: 'Form',
     icon: Icons.format_align_right,
     routerUrl: '/category/form'
+  ),
+  CategoryConfig(
+    cnTitle: '滚动视图',
+    enTitle: 'ScrollView',
+    icon: Icons.screen_lock_landscape,
+    routerUrl: '/category/nestedScrollView'
   )
 ];
