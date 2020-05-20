@@ -1,3 +1,4 @@
+import './utils/NavGlobalKey.dart';
 import './index.dart';
 import './routes/route_config.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => CurrentIndexProvider())
         ],
         child: MaterialApp(
+          navigatorKey: NavGlobalKey.navGlobalKey,
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,

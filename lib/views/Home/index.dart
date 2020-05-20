@@ -1,16 +1,35 @@
 import 'package:flutter/material.dart';
-// import '../../routes/router_fluro.dart';
-// import './config.dart';
+import '../../model/home.dart';
 import '../../utils/flutter_screenutil.dart';
 import './components/HomeListHorizontal.dart';
 import './components/HomeSwiper.dart';
 import './components/MusicStyle.dart';
 
-class HomePage extends StatelessWidget {
+import '../../services/home.dart';
+
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
+  // bool _isLoading = true;
+
+  @override
+  void initState() { 
+    super.initState();
+    
+    HomeServices.fetchHomeSwiper().then((value) {
+      
+      print(value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenConfig.setInit(context);
-
     return Scaffold(
         appBar: AppBar(
           elevation: 0,
@@ -55,4 +74,8 @@ class HomePage extends StatelessWidget {
           ],
         ));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
