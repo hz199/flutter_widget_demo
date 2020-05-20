@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import './bottomItemConfig.dart';
 import '../Home/index.dart';
 import '../Category/index.dart';
-import '../ShopingCat/index.dart';
+import '../ShopingCart/index.dart';
 import '../Personal/index.dart';
 
 List<Widget> mainPages = [
   HomePage(),
   CategoryPage(),
-  ShopingCatPage(),
+  ShopingCartPage(),
   PersonalPage()
 ];
 

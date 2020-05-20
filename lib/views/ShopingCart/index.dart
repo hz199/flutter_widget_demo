@@ -1,15 +1,45 @@
 import '../../index.dart';
-import './categoryConfig.dart';
+import './shopingCatConfig.dart';
 
-class CategoryPage extends StatelessWidget {
-  const CategoryPage({Key key}) : super(key: key);
+// class ShopingCatPage extends StatelessWidget {
+//   const ShopingCatPage({Key key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     int currentIndex = Provider.of<CurrentIndexProvider>(context).currentIndex;
+
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('ShopingCatPage'),
+//       ),
+//       body: Container(
+//         child: Center(
+//           child: Column(
+//             children: <Widget>[
+//               Text(currentIndex.toString()),
+//               FlatButton(
+//                 onPressed: () {
+//                   Provider.of<CurrentIndexProvider>(context, listen: false).changeIndex();
+//                 },
+//                 child: Text('点击'),
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+class ShopingCartPage extends StatelessWidget {
+  const ShopingCartPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('扩展'),
         elevation: 0,
-        title: Text('分类'),
       ),
       body: Container(
         margin: EdgeInsets.only(
@@ -23,12 +53,13 @@ class CategoryPage extends StatelessWidget {
               crossAxisCount: 2, //每行三列
               childAspectRatio: 1.8 //显示区域宽高相等
               ),
-          itemCount: categoryConfig.length,
+          itemCount: shopingCatConfig.length,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               child: _createGridItem(index, context),
               onTap: () {
-                RouterFluro.router.navigateTo(context, categoryConfig[index].routerUrl);
+                RouterFluro.router
+                    .navigateTo(context, shopingCatConfig[index].routerUrl);
               },
             );
           },
@@ -96,7 +127,7 @@ class CategoryPage extends StatelessWidget {
     final _fontStyleLong = TextStyle(fontSize: 22.0, color: Colors.grey[100]);
     final _fontStyleSmall = TextStyle(fontSize: 14.0, color: Colors.grey[100]);
 
-    final CategoryConfig _currentCinfig = categoryConfig[index];
+    final ShopingCatConfig _currentCinfig = shopingCatConfig[index];
 
     return Container(
       margin: EdgeInsets.symmetric(
