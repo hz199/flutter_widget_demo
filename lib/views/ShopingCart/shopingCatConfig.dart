@@ -21,4 +21,10 @@ List<ShopingCatConfig> shopingCatConfig = [
     icon: Icons.select_all,
     routerUrl: '/ShopingCart/ListRefresh'
   ),
+  ShopingCatConfig(
+    cnTitle: '上拉加载更多',
+    enTitle: 'PullUpLoad',
+    icon: Icons.confirmation_number,
+    routerUrl: '/ShopingCart/PullUpLoadMore'
+  ),
 ];

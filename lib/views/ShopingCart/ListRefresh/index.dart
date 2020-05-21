@@ -40,6 +40,9 @@ class _ListRefreshPageState extends State<ListRefreshPage> {
 
     list.forEach((item) {
       results.add(ListTile(
+        leading: CircleAvatar(
+          backgroundImage: NetworkImage(item.imageUrl),
+        ),
         title: Text(item.county),
         subtitle: Text(item.timer.toString()),
       ));
@@ -53,7 +56,9 @@ class _ListRefreshPageState extends State<ListRefreshPage> {
     return Scaffold(
       body: LoadingContainer(
         isLoading: _isLoading,
-        child: Container(
+        child: RefreshIndicator(
+          color: Colors.orangeAccent,
+          onRefresh: _handleRefresh,
           child: ListView(
             children: _getListChild(_refreshDataList),
           ),

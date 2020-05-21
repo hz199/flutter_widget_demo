@@ -1,3 +1,5 @@
+import 'package:pull_to_refresh/pull_to_refresh.dart';
+
 import './utils/NavGlobalKey.dart';
 import './index.dart';
 import './routes/route_config.dart';
@@ -21,13 +23,19 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           navigatorKey: NavGlobalKey.navGlobalKey,
           localizationsDelegates: [
-            GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            RefreshLocalizations.delegate,
           ],
           supportedLocales: [
-            Locale('en', 'US'),
-            Locale('zh', 'CH'),
+            const Locale('zh', 'CN'),
+            const Locale('en', 'US'),
           ],
+          localeResolutionCallback:
+              (Locale locale, Iterable<Locale> supportedLocales) {
+            // print("change language $locale");
+            return Locale('zh', 'CN');
+          },
           title: 'Flutter学习笔记',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(

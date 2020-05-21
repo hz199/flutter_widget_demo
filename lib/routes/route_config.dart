@@ -26,5 +26,6 @@ class Routes {
 
     // 扩展
     router.define('/ShopingCart/ListRefresh', handler: shopListRefreshPageHandler, transitionType: _transitionType);
+    router.define('/ShopingCart/PullUpLoadMore', handler: shopPullUpLoadMoreHandler, transitionType: _transitionType);
   }
 }
