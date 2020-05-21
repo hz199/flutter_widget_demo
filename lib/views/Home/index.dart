@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../model/home.dart';
 import '../../utils/flutter_screenutil.dart';
 import './components/HomeListHorizontal.dart';
 import './components/HomeSwiper.dart';
 import './components/MusicStyle.dart';
-
-import '../../services/home.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -15,16 +12,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
-  // bool _isLoading = true;
-
   @override
   void initState() { 
     super.initState();
-    
-    HomeServices.fetchHomeSwiper().then((value) {
-      
-      print(value);
-    });
   }
 
   @override
@@ -76,6 +66,5 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }
