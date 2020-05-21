@@ -30,12 +30,18 @@ class _PullUpLoadMoreState extends State<PullUpLoadMore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('上拉刷新下拉加载更多'),
+        elevation: 0,
+      ),
         body: LoadingContainer(
       isLoading: _isLoading,
       child: SmartRefresher(
         enablePullDown: true,
         enablePullUp: true,
-        header: WaterDropHeader(),
+        header: WaterDropHeader(
+          waterDropColor: Colors.orangeAccent
+        ),
         footer: CustomFooter(
           builder: (BuildContext context,LoadStatus mode){
             Widget body ;
