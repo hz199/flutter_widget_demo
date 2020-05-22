@@ -27,4 +27,10 @@ List<ShopingCatConfig> shopingCatConfig = [
     icon: Icons.confirmation_number,
     routerUrl: '/ShopingCart/PullUpLoadMore'
   ),
+  ShopingCatConfig(
+    cnTitle: '垂直导航',
+    enTitle: 'VerticalNav',
+    icon: Icons.vertical_align_bottom,
+    routerUrl: '/ShopingCart/VerticalNav'
+  ),
 ];
