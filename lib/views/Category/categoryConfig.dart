@@ -44,5 +44,11 @@ List<CategoryConfig> categoryConfig = [
     enTitle: 'ScrollView',
     icon: Icons.screen_lock_landscape,
     routerUrl: '/category/nestedScrollView'
+  ),
+  CategoryConfig(
+    cnTitle: '基础组件',
+    enTitle: 'BaseComp',
+    icon: Icons.screen_lock_landscape,
+    routerUrl: '/category/baseComp'
   )
 ];

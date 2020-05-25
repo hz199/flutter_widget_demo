@@ -23,6 +23,7 @@ class Routes {
     router.define('/category/datePicker', handler: categoryDatePickerHandler, transitionType: _transitionType);
     router.define('/category/form', handler: categoryFormHandler, transitionType: _transitionType);
     router.define('/category/nestedScrollView', handler: categoryNestedScrollViewHandler, transitionType: _transitionType);
+    router.define('/category/baseComp', handler: categoryBaseCompHandler, transitionType: _transitionType);
 
     // 扩展
     router.define('/ShopingCart/ListRefresh', handler: shopListRefreshPageHandler, transitionType: _transitionType);
