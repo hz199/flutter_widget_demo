@@ -50,5 +50,11 @@ List<CategoryConfig> categoryConfig = [
     enTitle: 'BaseComp',
     icon: Icons.screen_lock_landscape,
     routerUrl: '/category/baseComp'
+  ),
+  CategoryConfig(
+    cnTitle: '动画组件',
+    enTitle: 'Animate',
+    icon: Icons.filter_b_and_w,
+    routerUrl: '/category/Animate'
   )
 ];

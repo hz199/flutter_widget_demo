@@ -8,6 +8,7 @@ import '../../views/Category/DatePicker/index.dart';
 import '../../views/Category/Form/index.dart';
 import '../../views/Category/ScrollView/index.dart';
 import '../../views/Category/BaseComp/index.dart';
+import '../../views/Category/Animates/index.dart';
 
 // 分类
 // 按钮
@@ -45,5 +46,11 @@ Handler categoryNestedScrollViewHandler = Handler(
 Handler categoryBaseCompHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return BaseCompPage();
+  }
+);
+
+Handler categoryAnimateHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return AnimatePage();
   }
 );
