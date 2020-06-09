@@ -12,14 +12,14 @@ List<Widget> mainPages = [
   PersonalPage()
 ];
 
-class MyTestPage extends StatefulWidget {
+class MyMainApp extends StatefulWidget {
   @override
-  _MyTestPage createState() {
-    return new _MyTestPage();
+  _MyMainApp createState() {
+    return new _MyMainApp();
   }
 }
 
-class _MyTestPage extends State<MyTestPage>
+class _MyMainApp extends State<MyMainApp>
     with SingleTickerProviderStateMixin {
   final PageController _pageController = new PageController(initialPage: 0);
   int _tabIndex = 0;

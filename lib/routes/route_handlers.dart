@@ -11,7 +11,7 @@ export './handlers/shopingCart_handlers.dart';
 
 Handler homeHandle = Handler(
     handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-        MyTestPage());
+        MyMainApp());
 
 Handler testPage1Handle =
     Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
