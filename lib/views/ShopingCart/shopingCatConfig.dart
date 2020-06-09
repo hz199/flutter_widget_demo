@@ -33,4 +33,10 @@ List<ShopingCatConfig> shopingCatConfig = [
     icon: Icons.vertical_align_bottom,
     routerUrl: '/ShopingCart/VerticalNav'
   ),
+  ShopingCatConfig(
+    cnTitle: '局部导航',
+    enTitle: 'PartNav',
+    icon: Icons.notifications_active,
+    routerUrl: '/ShopingCart/partNavigator'
+  ),
 ];
