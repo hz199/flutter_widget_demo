@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           navigatorKey: NavGlobalKey.navGlobalKey,
           localizationsDelegates: [
             GlobalWidgetsLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate, 
             RefreshLocalizations.delegate,
           ],
           supportedLocales: [
