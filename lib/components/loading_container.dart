@@ -5,8 +5,8 @@ class LoadingContainer extends StatelessWidget {
   final bool isLoading;
   final bool cover;
 
-
-  LoadingContainer({@required this.child, @required this.isLoading, this.cover = false});
+  LoadingContainer(
+      {@required this.child, @required this.isLoading, this.cover = false});
 
   Widget get _loadingView {
     return Center(
@@ -16,8 +16,10 @@ class LoadingContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return !cover ? !isLoading ? child : _loadingView : Stack(
-      children: <Widget>[child, isLoading ? _loadingView: Container()],
-    );
+    return !cover
+        ? !isLoading ? child : _loadingView
+        : Stack(
+            children: <Widget>[child, isLoading ? _loadingView : Container()],
+          );
   }
 }
