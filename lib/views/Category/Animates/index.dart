@@ -1,5 +1,6 @@
 import '../../../index.dart';
 import './CustomPainter.dart';
+import './RiveAnimate.dart';
 
 class AnimateConfig<T> {
   // 要跳转的页面
@@ -11,7 +12,9 @@ class AnimateConfig<T> {
 
 List<AnimateConfig> _animateConfig = [
   AnimateConfig<CustomPainterPage>(
-      widget: CustomPainterPage(), title: '自定义painter动画')
+      widget: CustomPainterPage(), title: '自定义painter动画'),
+  AnimateConfig<RiveAnimatePage>(
+      widget: RiveAnimatePage(), title: 'rive flare动画')
 ];
 
 class AnimatePage extends StatelessWidget {
@@ -68,7 +71,10 @@ class AnimatePage extends StatelessWidget {
                     child: Center(
                       child: Container(
                         padding: EdgeInsets.all(10.0),
-                        child: Text(cuttentConfig.title, style: TextStyle(color: Colors.white),),
+                        child: Text(
+                          cuttentConfig.title,
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ));

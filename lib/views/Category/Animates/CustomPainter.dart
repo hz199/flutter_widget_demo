@@ -17,7 +17,7 @@ class _CustomPainterState extends State<CustomPainterPage>
   @override
   void initState() {
     _animationController =
-        AnimationController(duration: Duration(seconds: 1), vsync: this);
+        AnimationController(duration: Duration(seconds: 1), vsync: this)..repeat();
     super.initState();
   }
 
@@ -80,7 +80,7 @@ class MyPainter extends CustomPainter {
 class SnowFlake {
   double x = Random().nextDouble() * 400;
   double y = Random().nextDouble() * 800;
-  double g = Random().nextDouble() * 4 + 2;
+  double g = Random().nextDouble() * 1 + 2;
   double radius = Random().nextDouble() * 2 + 2;
 
   // 下落
@@ -89,7 +89,7 @@ class SnowFlake {
     if (y > 800) {
       y = 0;
       x = Random().nextDouble() * 400;
-      g = Random().nextDouble() * 4 + 2;
+      g = Random().nextDouble() * 1 + 2;
       radius = Random().nextDouble() * 2 + 2;
     }
   }
