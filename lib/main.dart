@@ -37,15 +37,17 @@ class MyApp extends StatelessWidget {
             return Locale('zh', 'CN');
           },
           title: 'Flutter学习笔记',
-          debugShowCheckedModeBanner: false,
+          // debugShowCheckedModeBanner: false,
           theme: ThemeData(
             brightness: Brightness.light,
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.white,  
             primaryColorLight: Colors.white,
             primaryColorBrightness: Brightness.light,
             primaryColor: Color(0xFFffffff),
             // iconTheme: IconThemeData(
             //   color: Color(0xFF888888),
+
+            
             //   size: 35.0,
             // ),
           ),

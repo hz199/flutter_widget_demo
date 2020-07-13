@@ -39,4 +39,10 @@ List<ShopingCatConfig> shopingCatConfig = [
     icon: Icons.notifications_active,
     routerUrl: '/ShopingCart/partNavigator'
   ),
+  ShopingCatConfig(
+    cnTitle: 'music播放器',
+    enTitle: 'musicPlayer',
+    icon: Icons.music_video,
+    routerUrl: '/ShopingCart/musicPlayer'
+  ),
 ];

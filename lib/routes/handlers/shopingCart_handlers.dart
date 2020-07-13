@@ -6,6 +6,7 @@ import '../../views/ShopingCart/partNavigator/index.dart';
 import '../../views/ShopingCart/listRefresh/index.dart';
 import '../../views/ShopingCart/pullUpLoad/index.dart';
 import '../../views/ShopingCart/VerticalNav/index.dart';
+import '../../views/ShopingCart/musicPlayer/index.dart';
 
 Handler shopListRefreshPageHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, dynamic> params) {
@@ -28,5 +29,11 @@ Handler shopVerticalNavHandler = Handler(
 Handler shopPartNavigatorHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return PartNavigator();
+  }
+);
+
+Handler shopMusicPlayerHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return MusicPlayer();
   }
 );
