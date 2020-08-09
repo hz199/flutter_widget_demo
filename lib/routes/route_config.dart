@@ -31,5 +31,6 @@ class Routes {
     router.define('/ShopingCart/PullUpLoadMore', handler: shopPullUpLoadMoreHandler, transitionType: _transitionType);
     router.define('/ShopingCart/VerticalNav', handler: shopVerticalNavHandler, transitionType: _transitionType);
     router.define('/ShopingCart/partNavigator', handler: shopPartNavigatorHandler, transitionType: _transitionType);
+    router.define('/ShopingCart/musicPlayer', handler: shopMusicPlayerHandler, transitionType: _transitionType);
   }
 }
