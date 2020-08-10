@@ -20,6 +20,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
   Duration musicDuration;
   Duration musicPosition;
 
+  // 播放状态
   PlayerState playerState = PlayerState.stopped;
 
   @override
@@ -37,7 +38,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
   }
 
   get isPlaying => playerState == PlayerState.playing;
-  get isPaused => playerState == PlayerState.paused; 
+  get isPaused => playerState == PlayerState.paused;
 
   get durationText =>
       musicDuration != null ? musicDuration.toString().split('.').first : '';
