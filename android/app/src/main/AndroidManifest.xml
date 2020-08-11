@@ -11,8 +11,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
+    <!-- android:usesCleartextTraffic="true" 安卓9以上 明文通信支持默认是被禁用的 -->
     <application
+        android:usesCleartextTraffic="true"
         android:name="io.flutter.app.FlutterApplication"
         android:label="我的flutter例子"
         android:icon="@mipmap/ic_launcher">
